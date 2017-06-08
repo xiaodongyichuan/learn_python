@@ -2,7 +2,6 @@
 #My first thing to do is show the R,G,B channels thought cv2.split
 #And then I change the channel sequence and chack the change.
 
-
 import argparse
 import cv2
 import numpy as np
@@ -16,9 +15,11 @@ cv2.imshow("Original", image)
 
 (B,G,R) = cv2.split(image)
 
-cv2.imshow("Red",R)
-cv2.imshow("Green",G)
-cv2.imshow("Blue",B)
+zeros = np.zeros(image.shape[:2], dtype = "uint8")
+
+cv2.imshow("Red",cv2.merge([zeros, zeros, R]))    #show the colour of the channel
+cv2.imshow("Green",cv2.merge([zeros, G, zeros])) 
+cv2.imshow("Blue",cv2.merge([B, zeros, zeros]))
 
 merged =cv2.merge([B,G,R])
 cv2.imshow("B,G,R",merged)
