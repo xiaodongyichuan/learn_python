@@ -1,6 +1,9 @@
 #This is a way for me to learn blur and np.hstack.
 #np.hstack is so useful,and I love it sooooo much.
 #In C language,I wrote a lot code can got it before.
+#We make use of the np.hstack function to stack our output images together.
+#This methodd "horizontally stacks" our three images into a row.
+#This is useful since we don't want to create three separate windows using the cv2.imshow function.
 
 import numpy as np 
 import argparse
